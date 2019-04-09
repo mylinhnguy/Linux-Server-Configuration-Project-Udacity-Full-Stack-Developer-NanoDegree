@@ -25,7 +25,7 @@ Learn how to install and configure a web and database server and actually host a
 
 - [Sign up AWS](https://aws.amazon.com/) and sign in to the console and look for the Amazon Lightsail 
 
-  <img src="https://github.com/mylinhnguy/Linux-Server-Configuration-Full-Stack-Developer-NanoDegree/blob/master/images/AmazonLightsail.PNG" width="600px"> 
+  <img src="https://github.com/mylinhnguy/Linux-Server-Configuration-Project-Udacity-Full-Stack-Developer-NanoDegree/blob/master/images/AmazonLightsail.PNG" width="600px"> 
 
 - Once you are login into the site, click `Create instance`. 
 - Choose `Linux/Unix` platform, `OS Only` and  `Ubuntu 16.04 LTS`.
@@ -95,11 +95,11 @@ Learn how to install and configure a web and database server and actually host a
 
 - Click on the `Manage` option of the Amazon Lightsail Instance, select the `Networking` tab, and  the firewall configuration to match the firewall settings above.
 
-  <img src="https://github.com/mylinhnguy/Linux-Server-Configuration-Full-Stack-Developer-NanoDegree/blob/master/images/LightsailInstance.PNG" width="600px">
+  <img src="https://github.com/mylinhnguy/Linux-Server-Configuration-Project-Udacity-Full-Stack-Developer-NanoDegree/blob/master/images/LightsailInstance.PNG" width="600px">
 
 - Allow ports 80(TCP), 123(UDP), and 2200(TCP), and deny the default port 22.
 
-  <img src="https://github.com/mylinhnguy/Linux-Server-Configuration-Full-Stack-Developer-NanoDegree/blob/master/images/ufw.PNG" width="600px">
+  <img src="https://github.com/mylinhnguy/Linux-Server-Configuration-Project-Udacity-Full-Stack-Developer-NanoDegree/blob/master/images/ufw.PNG" width="600px">
 
 - From your local terminal, run: `ssh -i ~/.ssh/Lightsail_Key.pem -p 2200 ubuntu@18.209.97.219`, where `18.209.97.219` is the public IP address of the instance.
 
@@ -167,7 +167,7 @@ Learn how to install and configure a web and database server and actually host a
 - While logged in as `grader`, install Apache `sudo apt-get install apache2`
 - Enter public IP of the Amazon Lightsail instance into browser. If Apache is working, you should see:
 
-   <img src="https://github.com/mylinhnguy/Linux-Server-Configuration-Full-Stack-Developer-NanoDegree/blob/master/images/apache2.PNG" width="600px">
+   <img src="https://github.com/mylinhnguy/Linux-Server-Configuration-Project-Udacity-Full-Stack-Developer-NanoDegree/blob/master/images/apache2.PNG" width="600px">
 
 - The project is built with Python2, install mod_wsgi `sudo apt-get install python-setuptools libapache2-mod-wsgi`
 - Enable `mod_wsgi`, run  `sudo a2enmod wsgi`
