@@ -47,6 +47,61 @@ Learn how to install and configure a web and database server and actually host a
     
     sudo apt-get update
     sudo apt-get upgrade
+
+#### 2. Automatic Updates
+
+- The `nattended-upgrades` package can be used to automatically install updated packages
+
+  ```
+  sudo apt install unattended-upgrades
+  ```
+
+- Edit `sudo nano /etc/apt/apt.conf.d/50unattended-upgrades` , uncomment the line  ${distro_codename}-updates and save it.
+
+  ```
+  Unattended-Upgrade::Allowed-Origins {
+        "${distro_id}:${distro_codename}";
+        "${distro_id}:${distro_codename}-security";
+      // "${distro_id}:${distro_codename}-updates";
+      // "${distro_id}:${distro_codename}-proposed";
+      // "${distro_id}:${distro_codename}-backports";
+  };
+  ```
+- Modidy automatic updates `sudo nano/etc/apt/apt.conf.d/20auto-upgrades` file, so that the upgrades are downloaded and installed every day
+
+  ```
+  APT::Periodic::Update-Package-Lists "1";
+  APT::Periodic::Download-Upgradeable-Packages "1";
+  APT::Periodic::AutocleanInterval "7";
+  APT::Periodic::Unattended-Upgrade "1";
+  ```
+- Enable it, run `sudo dpkg-reconfigure --priority=low unattended-upgrades`
+- Restart Apache: `sudo service apache2 restart`
+
+#### 3. Updated packages to most recent versions
+
+- Some packages have not been updated because the server need to be rebooted
+  
+  ```
+  sudo apt-get update
+  sudo apt-get dist-upgrade
+  sudo shutdown -r now
+  ```  
+#### 4. The `PermitRootLogin` property should be set to no so a root user cannot be used to manipulate your server
+
+  ```
+  sudo nano cat /etc/ssh/sshd_config
+  ```  
+- Change this config to `no`
+
+  ```
+  # Authentication:
+  LoginGraceTime 120
+  PermitRootLogin prohibit-password
+  StrictModes no
+  ```
+  
+ <img src="https://github.com/mylinhnguy/Linux-Server-Configuration-Project-Udacity-Full-Stack-Developer-NanoDegree/blob/master/images/PermitRootLogin.PNG" width="600px">
         
 ### 2. Change the SSH port from 22 to 2200
 
