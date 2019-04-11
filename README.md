@@ -101,7 +101,7 @@ Learn how to install and configure a web and database server and actually host a
   StrictModes no
   ```
   
- <img src="https://github.com/mylinhnguy/Linux-Server-Configuration-Project-Udacity-Full-Stack-Developer-NanoDegree/blob/master/images/PermitRootLogin.PNG" width="600px">
+  <img src="https://github.com/mylinhnguy/Linux-Server-Configuration-Project-Udacity-Full-Stack-Developer-NanoDegree/blob/master/images/PermitRootLogin.PNG" width="600px">
         
 ### 2. Change the SSH port from 22 to 2200
 
