@@ -474,3 +474,4 @@ The project structure should look like
     
 ## References:
 https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps
+https://help.ubuntu.com/lts/serverguide/automatic-updates.html
